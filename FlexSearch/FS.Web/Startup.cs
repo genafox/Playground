@@ -25,10 +25,8 @@ namespace FS.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            // Is necessary for static files serving from the wwwroot folder only
+            app.UseStaticFiles();
         }
     }
 }
