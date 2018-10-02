@@ -1,0 +1,17 @@
+// Create repository
+git init
+
+// Add all files to Index area
+git add . 
+
+// Commit changes
+git commit -m "Commit Name" 
+
+// Add remote repository
+git remote add origin https://github.com/genafox/Playground.git
+    
+// Push to remote repository
+git push origin master
+
+// Enable credentials storage in git
+git config credential.helper store
