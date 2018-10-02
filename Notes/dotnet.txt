@@ -1,2 +1,8 @@
 // Create new ASP .NET Core Empty project
 dotnet new web
+
+// Build project
+dotnet build
+
+// Launch project
+dotnet run
