@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <Target Name="WebpackRun" BeforeTargets="Build">
+        <Message Importance="high" Text="Running webpack build..." />
+        <Exec Command="npm run build" />
+  </Target>
+
 </Project>

@@ -15,6 +15,8 @@ namespace FS.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // ===== Add MVC =====
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,8 +27,21 @@ namespace FS.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            // Is necessary for static files serving from the wwwroot folder only
+            // Serve static files from the wwwroot folder
             app.UseStaticFiles();
+
+            // Configure routes
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+                // Use redirect to Home/Index when 404 Not Found error occurs for client-side routing
+                routes.MapSpaFallbackRoute(
+                   name: "spa-fallback",
+                   defaults: new { controller = "Home", action = "Index" });
+            });
         }
     }
 }
