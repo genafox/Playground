@@ -1,0 +1,2 @@
+// Create new ASP .NET Core Empty project
+dotnet new web

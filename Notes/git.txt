@@ -15,3 +15,8 @@ git push origin master
 
 // Enable credentials storage in git
 git config credential.helper store
+
+// Remove untracked files from Working area
+git clean
+    -d - remove directories as well
+    -f - force
